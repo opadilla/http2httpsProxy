@@ -27,6 +27,7 @@ proxy.on('error', function (err, req, res) {
 });
 
 proxy.on('proxyRes', function(proxyRes, req, res) {
+  console.log(req.url);
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, GET, OPTIONS');
 
