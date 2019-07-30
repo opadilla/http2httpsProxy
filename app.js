@@ -29,7 +29,7 @@ proxy.on('error', function (err, req, res) {
 proxy.on('proxyRes', function(proxyRes, req, res) {
   console.log(req.url);
   res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'POST, GET, OPTIONS');
+  res.setHeader('Access-Control-Allow-Methods', 'POST, GET, OPTIONS, PUT, DELETE, PATCH');
 
   proxyRes.headers['access-control-allow-origin'] = config.origin;
   proxyRes.headers['access-control-allow-credentials'] = true;
