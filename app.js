@@ -2,7 +2,10 @@ const config = require('./config');
 
 var http = require('http'),
     httpProxy = require('http-proxy');
-var proxy = httpProxy.createProxyServer({});
+var proxy = httpProxy.createProxyServer({
+  ignorePath: true,
+  changeOrigin: true
+});
 
 var server = http.createServer(function(req, res) {
     proxy.web(req, res, {
@@ -14,6 +17,7 @@ var server = http.createServer(function(req, res) {
     });
 });
 console.log("listening on port " + config.port)
+server.timeout = 120000;
 server.listen(config.port);
 
 // Listen for the `error` event on `proxy`.
