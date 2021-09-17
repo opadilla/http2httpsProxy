@@ -1,7 +1,7 @@
 http2httpsProxy
 
 Possibly unhandled rejection: 
-```
+```json
 {
    "data":{
       "type":"https://tools.ietf.org/html/rfc7231#section-6.5.1",
